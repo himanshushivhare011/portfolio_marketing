@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Marketing Expert | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #ffd700;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin: 0 auto 30px;
+            object-fit: cover;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a6f);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .skills-section {
+            margin: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ff6b6b);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .skill-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .skill-card p {
+            font-size: 1em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .expertise-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+
+        .expertise-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .expertise-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .expertise-tag:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #764ba2, #667eea);
+            border-color: #ffd700;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px 40px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        .contact-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .tagline {
+                font-size: 1.2em;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+            .expertise-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://i.postimg.cc/YqHKpzpn/Whats-App-Image-2025-10-29-at-12-07-39-3c6b30bf.jpg" alt="Himanshu - Social Media Marketing Expert" class="profile-image" id="profileImage" crossorigin="anonymous" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27180%27 height=%27180%27%3E%3Ccircle cx=%2790%27 cy=%2790%27 r=%2790%27 fill=%27%23667eea%27/%3E%3Ctext x=%2790%27 y=%27110%27 font-size=%2780%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27Arial%27%3E👨‍💼%3C/text%3E%3C/svg%3E'">
+            <h1 class="floating">Himanshu</h1>
+            <p class="tagline">Social Media Marketing Expert | Content Creator</p>
+            <p style="opacity: 0.9; margin: 15px 0;">Transforming Brands Through Creative Content & Strategic Marketing</p>
+            <div style="margin-top: 20px;">
+                <a href="https://www.instagram.com/itz__himanshu_011" class="cta-button" target="_blank" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);">📸 Follow on Instagram</a>
+                <a href="https://wa.me/917999290891" class="cta-button" target="_blank">📱 WhatsApp Me</a>
+            </div>
+        </header>
+
+        <section class="skills-section">
+            <h2 class="section-title">What I Do Best</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Strategic social media campaigns that grow your brand presence. Expert in content planning, audience engagement, and performance analytics across all platforms.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎬</div>
+                    <h3>Video Editing</h3>
+                    <p>Professional video editing for social media platforms. Creating engaging reels, stories, and promotional videos that capture attention and drive engagement.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Poster Design</h3>
+                    <p>Eye-catching poster and graphic designs that communicate your brand message effectively. From social media posts to promotional materials.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h3>AI-Powered Creation</h3>
+                    <p>Leveraging cutting-edge AI tools to create stunning visuals, content, and marketing materials that stand out in the digital landscape.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="expertise-section">
+            <h2 class="section-title">Tools & Expertise</h2>
+            <div class="expertise-list">
+                <span class="expertise-tag">Adobe Premiere Pro</span>
+                <span class="expertise-tag">CapCut</span>
+                <span class="expertise-tag">Canva Pro</span>
+                <span class="expertise-tag">Adobe Photoshop</span>
+                <span class="expertise-tag">Midjourney</span>
+                <span class="expertise-tag">DALL-E</span>
+                <span class="expertise-tag">ChatGPT</span>
+                <span class="expertise-tag">Instagram Marketing</span>
+                <span class="expertise-tag">Facebook Ads</span>
+                <span class="expertise-tag">Content Strategy</span>
+                <span class="expertise-tag">Brand Identity</span>
+                <span class="expertise-tag">Social Media Management</span>
+            </div>
+        </section>
+
+        <section class="expertise-section">
+            <h2 class="section-title">My Work & Portfolio</h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px; opacity: 0.9;">Check out my latest projects and creative work on Instagram</p>
+            <div class="skills-grid">
+                <div class="skill-card" style="cursor: pointer;" onclick="window.open('https://www.instagram.com/sagar_seals', '_blank')">
+                    <div class="skill-icon">🏢</div>
+                    <h3>Sagar Seals</h3>
+                    <p>Complete social media management, branding, and content creation for industrial client. View posts, reels, and marketing campaigns.</p>
+                    <a href="https://www.instagram.com/sagar_seals" target="_blank" style="color: #ffd700; text-decoration: none; font-weight: bold; margin-top: 10px; display: inline-block;">View Portfolio →</a>
+                </div>
+
+                <div class="skill-card" style="cursor: pointer;" onclick="window.open('https://www.instagram.com/sistecratibad', '_blank')">
+                    <div class="skill-icon">🎯</div>
+                    <h3>Sistec Ratibad</h3>
+                    <p>Educational institution social media marketing, event coverage, and student engagement content. Creative designs and promotional materials.</p>
+                    <a href="https://www.instagram.com/sistecratibad" target="_blank" style="color: #ffd700; text-decoration: none; font-weight: bold; margin-top: 10px; display: inline-block;">View Portfolio →</a>
+                </div>
+
+                <div class="skill-card" style="cursor: pointer;" onclick="window.open('https://www.instagram.com/itz__himanshu_011', '_blank')">
+                    <div class="skill-icon">✨</div>
+                    <h3>Personal Portfolio</h3>
+                    <p>My creative journey, behind-the-scenes content, AI-generated designs, video editing samples, and more recent projects.</p>
+                    <a href="https://www.instagram.com/itz__himanshu_011" target="_blank" style="color: #ffd700; text-decoration: none; font-weight: bold; margin-top: 10px; display: inline-block;">View Portfolio →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="expertise-section">
+            <h2 class="section-title">Why Choose Me?</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Quick delivery without compromising on quality. Your deadlines are my priority.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💡</div>
+                    <h3>Creative Vision</h3>
+                    <p>Fresh, innovative ideas that make your brand stand out from the competition.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">📈</div>
+                    <h3>Results-Driven</h3>
+                    <p>Focused on creating content that drives engagement, conversions, and growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="section-title">Ready to Elevate Your Brand?</h2>
+            <p style="font-size: 1.2em; margin: 20px 0; opacity: 0.9;">Let's discuss how I can help grow your social media presence</p>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/917999290891" style="color: #ffd700; text-decoration: none; font-weight: bold;">+91 7999290891</a></p>
+                </div>
+                <div class="contact-card" style="cursor: pointer;" onclick="window.open('https://www.instagram.com/itz__himanshu_011', '_blank')">
+                    <div class="contact-icon">📱</div>
+                    <h3>Instagram</h3>
+                    <p><a href="https://www.instagram.com/itz__himanshu_011" target="_blank" style="color: #ffd700; text-decoration: none; font-weight: bold;">@itz__himanshu_011</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>Available For</h3>
+                    <p>Freelance Projects<br>Full-time Positions</p>
+                </div>
+            </div>
+            <a href="https://wa.me/917999290891?text=Hi Himanshu! I'm interested in your social media marketing services." class="cta-button" target="_blank" style="margin-top: 30px;">Start a Project Now</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Social Media Marketing Portfolio. Designed with creativity and passion.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Profile image upload functionality
+        const profileImage = document.getElementById('profileImage');
+        
+        // You can replace the placeholder by right-clicking and inspecting the image
+        // Then replace the src with your actual image URL or use the code below
+        
+        // Smooth scroll animation for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add parallax effect to header
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.transform = `translateY(${scroll * 0.5}px)`;
+            }
+        });
+
+        // Add interactive hover glow effect
+        document.querySelectorAll('.skill-card, .contact-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15))`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.background = 'rgba(255, 255, 255, 0.15)';
+            });
+        });
+    </script>
+</body>
+</html>
